@@ -243,7 +243,7 @@ func (t *parser) listItem(list []interface{}, i int) ([]interface{}, error) {
 	case last == '.':
 		// We have a nested object. Send to t.key
 		inner := map[string]interface{}{}
-		if len(list) > i {
+		if len(list) > i && list[i] != nil {
 			inner = list[i].(map[string]interface{})
 		}
 
